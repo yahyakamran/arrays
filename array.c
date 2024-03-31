@@ -10,8 +10,19 @@ int main(void){
         printf("%d ",A[i]);
     }
     printf("\n");
-    for (int i = 0 ; i < 2; i++) {
+
+    int *q = (int *)malloc(5*sizeof(int));
+    for(int i = 0 ; i < 2 ; ++i){
+        q[i] = P[i];
+    }
+
+    free(P);
+    P=q;
+    q = NULL;
+    for (int i = 0 ; i < 5; i++) {
         printf("%d ",P[i]);
     }
+    printf("\n");
+
 return 0;
 }
